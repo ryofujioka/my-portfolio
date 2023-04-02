@@ -1,1 +1,3 @@
 # my-portfolio
+
+ウェブデザイン等フロントエンドほぼ未経験(HTMLとかjavascriptとかCSSはぼんやり分かる程度)から、chatGPTの力を借りながらポートフォリオサイトを構築していく
