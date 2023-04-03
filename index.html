@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-  <title>ポートフォリオサイト</title>
+  <title>Baro's Portfolio</title>
 </head>
 <body>
 
   <!-- ヘッダー -->
   <header class="bg-dark py-3">
     <div class="container">
-      <h1 class="text-white">ポートフォリオサイト</h1>
+      <h1 class="text-white">Baro's Portfolio</h1>
     </div>
   </header>
 
@@ -21,7 +21,11 @@
     <div class="row">
       <div class="col">
         <h2>ようこそ</h2>
-        <p>ここでは私のスキルと実績を紹介しています。</p>
+        <p>はじめまして！ばろテックと申します！</p>
+        <p>大阪生まれ、兵庫育ち、京都在住</p>
+        <p>自分がこれまでどのような人生を歩み、どのようなことを経験してきたのかを</p>
+        <p>ざっくり知ってほしくて、このページを作成しました。</p>
+        <p>二度ほど挫折を味わいましたが、何とか自分の人生を取り戻すべく奮闘中。</p>
       </div>
     </div>
   </section>
@@ -33,11 +37,55 @@
       <!-- プロジェクト1 -->
       <div class="col-md-4">
         <div class="card">
-          <img src="プロジェクト画像URL" class="card-img-top" alt="プロジェクト画像">
+          <!-- <img src="プロジェクト画像URL" class="card-img-top" alt="プロジェクト画像">
           <div class="card-body">
             <h5 class="card-title">プロジェクト名</h5>
             <p class="card-text">プロジェクトの説明</p>
-          </div>
+          </div> -->
+          <canvas id="myRaderChart"></canvas>
+        <!-- CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+        
+        <script>
+            var ctx = document.getElementById("myRaderChart");
+            var myRadarChart = new Chart(ctx, {
+                type: 'radar', 
+                data: { 
+                    labels: ["英語", "数学", "国語", "理科", "社会"],
+                    datasets: [{
+                        label: 'Aさん',
+                        data: [92, 72, 86, 74, 86],
+                        backgroundColor: 'RGBA(225,95,150, 0.5)',
+                        borderColor: 'RGBA(225,95,150, 1)',
+                        borderWidth: 1,
+                        pointBackgroundColor: 'RGB(46,106,177)'
+                    }, {
+                        label: 'Bさん',
+                        data: [73, 95, 80, 87, 79],
+                        backgroundColor: 'RGBA(115,255,25, 0.5)',
+                        borderColor: 'RGBA(115,255,25, 1)',
+                        borderWidth: 1,
+                        pointBackgroundColor: 'RGB(46,106,177)'
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: '試験成績'
+                    },
+                    scale:{
+                        ticks:{
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            stepSize: 10,
+                            callback: function(value, index, values){
+                                return  value +  '点'
+                            }
+                        }
+                    }
+                }
+            });
+            </script>
         </div>
       </div>
       <!-- 他のプロジェクトを追加 -->
@@ -58,7 +106,7 @@
     <!-- フッター -->
   <footer class="bg-dark py-3 mt-5">
     <div class="container">
-      <p class="text-white text-center mb-0">&copy; あなたの名前. All Rights Reserved.</p>
+      <p class="text-white text-center mb-0">&copy; Ryo Fujioka. All Rights Reserved.</p>
     </div>
   </footer>
 
